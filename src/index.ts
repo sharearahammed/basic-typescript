@@ -102,13 +102,52 @@
 // Rest Operator
 
 //function with object
-type GetDataType = (product: {
-  name: string;
-  stock: string;
-  price: number;
-  photo: string;
-}) => void;
+// interface productType {
+//   name: string;
+//   stock: number;
+//   price: number;
+//   photo?: string;
+//   readonly id: string;
+// }
+// type GetDataType = (product: productType) => void;
 
-const getData: GetDataType = (product) => {
-  console.log(product);
-};
+// const getData: GetDataType = (product) => {
+//   console.log(product);
+// };
+
+// const productOne: productType = {
+//   name: "Macbook",
+//   stock: 10,
+//   price: 156363,
+//   photo: "photoUrl",
+//   id:"dfdsf"
+// };
+// getData(productOne);
+
+// Never Type
+// type themeMode = "light" | "dark";
+
+// const errorHandler = (): never => {
+//   throw new Error();
+// };
+
+// const mode: themeMode = "light";
+
+// ----------------------------------------------------
+
+// classes
+
+class Player {
+  constructor(
+    private height: number,
+    public weight: number,
+    protected power?: number
+  ) {}
+  getMyHeight = () => {
+    return this.height;
+  };
+}
+
+const nihal = new Player(20, 12 );
+// nihal.height
+console.log(nihal.getMyHeight());
