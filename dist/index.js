@@ -113,11 +113,27 @@ class Player {
         this.height = height;
         this.weight = weight;
         this.power = power;
-        this.getMyHeight = () => {
-            return this.height;
-        };
+        this.id = String(Math.random() * 10);
+    }
+    // getMyHeight = () => {
+    //   return this.height;
+    // };
+    get getMyHeight() {
+        return this.height;
     }
 }
-const nihal = new Player(20, 12);
-// nihal.height
-console.log(nihal.getMyHeight());
+const nihal = new Player(20, 12, 30);
+const myObj = {
+    name: "Nihal",
+    email: "sharear@gmail.com",
+};
+const getName = () => {
+    return myObj["name"];
+};
+const getEmail = () => {
+    return myObj["email"];
+};
+const getData = (key) => {
+    return myObj[key];
+};
+getData("name");

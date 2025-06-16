@@ -149,9 +149,9 @@ class Player {
   // getMyHeight = () => {
   //   return this.height;
   // };
-  get getMyHeight ()  {
+  get getMyHeight() {
     return this.height;
-  };
+  }
 }
 const nihal = new Player(20, 12, 30);
 // nihal.height
@@ -174,3 +174,26 @@ const nihal = new Player(20, 12, 30);
 // console.log("special", nihal.special);
 // console.log("power", nihal.getPower());
 // console.log("id", nihal.id);
+
+interface person {
+  [key: string]: string;
+}
+
+const myObj: person = {
+  name: "Nihal",
+  email: "sharear@gmail.com",
+};
+
+const getName = (): string => {
+  return myObj["name"];
+};
+
+const getEmail = (): string => {
+  return myObj["email"];
+};
+
+const getData = (key: keyof person): string => {
+  return myObj[key];
+};
+
+getData("name");
