@@ -123,17 +123,76 @@ class Player {
     }
 }
 const nihal = new Player(20, 12, 30);
-const myObj = {
-    name: "Nihal",
-    email: "sharear@gmail.com",
-};
-const getName = () => {
-    return myObj["name"];
-};
-const getEmail = () => {
-    return myObj["email"];
-};
-const getData = (key) => {
-    return myObj[key];
-};
-getData("name");
+// type User2 = Partial<User>
+// ------Required<Type> - opposite of partial
+// type User2 =Required<User>
+// const user : Required<User> = {
+// name:"nihal",
+// email:"nihal@gmail.com"
+// }
+// ------Readonly<Type>
+// const user: Readonly<User> = {
+//   name: "nihal",
+//   email: "nihal@gmail.com",
+// };
+// ------Record<Key,type>
+// interface UserInfo {
+//   age: number;
+// }
+// type UserName = "nihal" | "nabil" | "fahim";
+// const users: Record<UserName, UserInfo> = {
+//   nihal: {
+//     age: 12,
+//   },
+//   nabil: {
+//     age: 13,
+//   },
+//   fahim: {
+//     age: 14,
+//   },
+// };
+// ------Pick <Type,keys>
+// interface OrderInfo {
+//   readonly id: string;
+//   user: string;
+//   city: string;
+//   country: string;
+//   state: string;
+//   status: string;
+// }
+// type SingleInfo = Pick<OrderInfo, "user" | "city" | "country">;
+// ------Omit <Type,keys>
+// type Random = Omit<OrderInfo, "id" | "status">;
+// ------ Exclude<Type , ExcludeUnion>
+// type MyUnion = string | number | boolean;
+// type Random = Exclude<MyUnion, boolean>;
+// ------ Extract<Type , Union>
+// type MyUnion = string | number | boolean;
+// type Random = Extract<MyUnion, boolean>;
+// ------ NonNullable<Type>
+// type MyUnion = string | number | boolean | null | undefined;
+// type Random = NonNullable<MyUnion>;
+// ------ parameters<Type>
+// const myFunc = (a: string, b: number) => {
+//   console.log(a + b);
+// };
+// type Random = Parameters<typeof myFunc>
+// ------ ConstructorParameters<Type>
+// class SampleClass {
+//   constructor(public s: string, public t: string) {}
+// }
+// type Random = ConstructorParameters<typeof SampleClass>
+// ------ ReturnType<Type>
+// const myFunc = (a: string, b: number): string => {
+//   return a + b;
+// };
+// type FuncType = ReturnType<typeof myFunc>;
+// ------ InstanceType<Type>
+// class SampleClass {
+//   constructor(public s: string, public t: string) {}
+// }
+// type Random = InstanceType<typeof SampleClass>;
+// const user: Random = {
+//   s: "22",
+//   t: "11",
+// };
