@@ -291,3 +291,74 @@ type User = {
 //   s: "22",
 //   t: "11",
 // };
+
+// --------------------------------------------------------------------------------------
+
+// Generics
+
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+
+// const func = <T>(n: T): T => {
+//   return n;
+// };
+
+// const person1: Person = {
+//   name: "Nihal",
+//   age: 12,
+// };
+
+// const ans = func<Person>(person1);
+
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+
+// type Person2 = {
+//   name: string;
+//   age: number;
+//   email: string;
+// };
+
+// const user: Person = {
+//   name: "Nihal",
+//   age: 25,
+// };
+// const user2: Person2 = {
+//   name: "Nihal",
+//   age: 25,
+//   email: "asfd@gmail.com",
+// };
+// const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
+//   return { n, o };
+// };
+
+// const res = func<Person, Person2>(user, user2);
+
+type People = {
+  name: string;
+  age: number;
+};
+
+const users: People[] = [
+  { name: "Nihal", age: 25 },
+  { name: "Nabil", age: 24 },
+  { name: "Fahim", age: 23 },
+];
+
+const filteredPeople = <T, U extends keyof T>(
+  arr: T[],
+  poperty: U,
+  value: T[U]
+): T[] => {
+  return arr.filter((item) => item[poperty] === value);
+};
+
+const filterPeopleByName = filteredPeople(users, "name", "Fahim");
+const filterPeopleByAge = filteredPeople(users, "age", 25);
+
+console.log("filterPeopleByName", filterPeopleByName);
+console.log("filterPeopleByAge", filterPeopleByAge);
