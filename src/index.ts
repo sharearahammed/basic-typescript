@@ -338,27 +338,27 @@ type User = {
 
 // const res = func<Person, Person2>(user, user2);
 
-type People = {
-  name: string;
-  age: number;
-};
+// type People = {
+//   name: string;
+//   age: number;
+// };
 
-const users: People[] = [
-  { name: "Nihal", age: 25 },
-  { name: "Nabil", age: 24 },
-  { name: "Fahim", age: 23 },
-];
+// const users: People[] = [
+//   { name: "Nihal", age: 25 },
+//   { name: "Nabil", age: 24 },
+//   { name: "Fahim", age: 23 },
+// ];
 
-const filteredPeople = <T, U extends keyof T>(
-  arr: T[],
-  poperty: U,
-  value: T[U]
-): T[] => {
-  return arr.filter((item) => item[poperty] === value);
-};
+// const filteredPeople = <T, U extends keyof T>(
+//   arr: T[],
+//   poperty: U,
+//   value: T[U]
+// ): T[] => {
+//   return arr.filter((item) => item[poperty] === value);
+// };
 
-const filterPeopleByName = filteredPeople(users, "name", "Fahim");
-const filterPeopleByAge = filteredPeople(users, "age", 25);
+// const filterPeopleByName = filteredPeople(users, "name", "Fahim");
+// const filterPeopleByAge = filteredPeople(users, "age", 25);
 
-console.log("filterPeopleByName", filterPeopleByName);
-console.log("filterPeopleByAge", filterPeopleByAge);
+// console.log("filterPeopleByName", filterPeopleByName);
+// console.log("filterPeopleByAge", filterPeopleByAge);
