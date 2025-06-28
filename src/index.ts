@@ -362,3 +362,50 @@ type User = {
 
 // console.log("filterPeopleByName", filterPeopleByName);
 // console.log("filterPeopleByAge", filterPeopleByAge);
+
+// -----------------------------------------------------------
+// spread operator
+
+let obj: object = {
+  name: "Sharear",
+  age: 10,
+};
+
+// let obj1 = { ...obj };
+obj = { ...obj, passport: true };
+console.log("obj", obj);
+
+// let valArray:<Array>[]
+const arr: Array<number> = [12, 33, 64];
+
+// -----------------------------------------------------------
+// enum
+enum Color {
+  APP_NAME = "my_app_name",
+  Red = "red",
+  Yellow = "yellow",
+  Blue = "blue",
+  Green = "green",
+}
+
+let color: Color = Color.Green;
+
+let notSure: unknown = "a";
+
+if (typeof notSure == "number") {
+  notSure.toFixed(2);
+} else if (typeof notSure == "string") {
+  notSure.length;
+}
+
+function infiniteLoop(): never {
+  while (true) {
+    console.log(1);
+  }
+}
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+throwError("Somthing went to wrong");
