@@ -409,3 +409,50 @@ function throwError(message: string): never {
 }
 
 throwError("Somthing went to wrong");
+
+// -----------------------------------------------------------
+// Union type
+let id: string | number | boolean;
+id = "abc";
+id = 12;
+id = true;
+
+function printId(id: string | number) {
+  if (typeof id === "string") {
+    console.log(`id is a string ${id.toLocaleUpperCase()}`);
+  } else {
+    console.log(`is is a number : ${id}`);
+  }
+}
+printId(101);
+printId("sharear");
+
+// -----------------------------------------------------------
+
+// interface
+
+interface Person {
+  name: string;
+  age: number;
+  great: () => void;
+}
+
+function great() {
+  console.log("hlw");
+}
+
+let person: Person = {
+  name: "Nihal",
+  age: 12,
+  great,
+};
+
+interface MathOp {
+  (a: number, b: number): number;
+}
+
+const add: MathOp = (x, y) => x + y;
+const sub: MathOp = (x, y) => x - y;
+
+console.log("add 2 numbers", add(12, 10));
+console.log("sub 2 numbers", sub(12, 10));
